@@ -20,7 +20,6 @@ import {
   MoreVertical,
   Clock,
 } from "lucide-react";
-
 /* ───────── helpers ───────── */
 const getRelativeTime = (dateStr) => {
   if (!dateStr) return "";
@@ -736,11 +735,11 @@ const DiscussionsPage = () => {
                         <select
                           value={globalCategory}
                           onChange={(e) => setGlobalCategory(e.target.value)}
-                          className="appearance-none pl-3 pr-8 py-2 bg-input border border-border rounded-lg text-sm text-muted focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+                          className="appearance-none  text-red-500 pl-4 pr-10 py-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer transition duration-300 ease-in-out" 
                         >
-                          <option value="">Select Category *</option>
+                          <option value=""  className="bg-white text-gray-700 font-semibold">Select Category *</option>
                           {GLOBAL_CATEGORIES.map((c) => (
-                            <option key={c} value={c}>
+                            <option key={c} value={c}   className="bg-white text-gray-700 font-semibold">
                               {c}
                             </option>
                           ))}

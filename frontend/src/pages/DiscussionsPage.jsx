@@ -622,20 +622,26 @@ const DiscussionsPage = () => {
                                   <ThumbsDown className="w-3.5 h-3.5" />
                                   {post.dislikes?.length || 0}
                                 </button>
-                                <span
+                                <button
+                                  type="button"
                                   onClick={() => {
                                     setPanelReplyingTo(panelReplyingTo === post.id ? null : post.id);
                                     setPanelReplyInputText("");
                                   }}
-                                  className="hover:text-main cursor-pointer"
+                                  className="hover:text-main cursor-pointer bg-transparent p-0 border-0"
+                                  aria-expanded={panelReplyingTo === post.id}
+                                  aria-controls={`panel-reply-${post.id}`}
                                 >
                                   {t("discussions.reply")} ({post.replies?.length || 0})
-                                </span>
+                                </button>
                               </div>
 
                               {/* Reply Input */}
                               {panelReplyingTo === post.id && (
-                                <div className="mt-2 flex items-center gap-2">
+                                <div
+                                  className="mt-2 flex items-center gap-2"
+                                  id={`panel-reply-${post.id}`}
+                                >
                                   <input
                                     type="text"
                                     placeholder="Write a reply..."

@@ -51,7 +51,7 @@ npm install
 cp .env.example .env
 # Fill in your Firebase credentials in .env
 npm run dev
-```
+````
 > See [`frontend/README.md`](./frontend/README.md) for full setup guide.
 
 ### 4. Setup AI Service
